@@ -1,0 +1,83 @@
+﻿@{
+
+}
+<footer class="footer">
+    <div class="AllFooterContent">
+
+        <div class="FooterContentItem">
+            <div class="FooterTitle">فروشگاه میز و صندلی استیل طاها</div>
+            <div class="FooterContentText" style="margin-top:20px;"><span style="font-size:20px;">نشانی</span><br /><br />آدرس :تهران، خیابان پامنار ، پاساژ صفی یاری ، فروشگاه میز و صندلی استیل طاها</div>
+
+        </div>
+
+      <div class="FooterContentItem">
+            <div class="EmailSection">
+                <img src="~/Theme/assets/img/FooterMailIcon.png" class="EmailSectionIcon" />
+                <div>آدرس ایمیل خود را وارد کنید : </div>
+                <input type="email" id="txtEmailAddress" class="txtEmail" />
+                <input type="button" class="btnEmail" value="ثبت ایمیل" onclick="SubmitEmail();" />
+            </div>
+
+
+             <div class="FooterContentUnderLine"></div>
+            <a href="/Home/ContactUs"><div class="haveHoerEffect" style="color:white;width:auto;font-size:14px;">طراحی و توسعه توسط محمد منافی</div></a>
+
+
+            <div class="FooterContentText" style="margin-top:9%; align-content:center;align-items:center;justify-content:center;display:flex;">
+                <div class="SocialNet Twitter"></div>
+                <div class="SocialNet FaceBook"></div>
+                <div class="SocialNet GooglePlus"></div>
+                <div class="SocialNet LikedIn"></div>
+                <div class="SocialNet YouTub"></div>
+            </div>
+
+        </div>
+
+        <div class="FooterContentItem">
+            <div class="FooterLinksContainer">
+
+                <div class="FooterContentText" style="font-size:18px;margin-top:30px;">خدمات</div>
+
+                <a asp-page="/Index"><div class="FooterContentText haveHoerEffect" style="margin-top:10px; margin-left:11px;">صفحه اصلی</div></a>
+                <br />
+                <a asp-page="/Account"><div class="FooterContentText haveHoerEffect" style="align-content:center;align-items:center;justify-content:center;display:flex;">ورود به سیستم</div></a>
+            </div>
+            <div class="FooterLinksContainer">
+
+                <div class="FooterContentText" style="font-size:18px;margin-top:30px;">درباره ما</div>
+
+                <a asp-page="/Contact"><div class="FooterContentText haveHoerEffect" style="margin-top:10px; margin-left:11px;">استیل طاها</div></a>
+               
+                <a href="https://www.instagram.com/steel_taha/"><div class="FooterContentText haveHoerEffect" style="margin-right:10px;">اینستاگرام استیل طاها</div></a>
+            </div>
+        </div>
+        
+
+        <div class="FooterContentUnderLine"></div>
+        <span style="display:block;float:right;color:#888f94;width:99%;margin-right:0.5%;font-size:12px;">تمامی حقوق این سایت متعلق به فروشگاه میز و صندلی استیل طاها است. ©</span>
+
+    </div>
+</footer>
+
+<script>
+    function SubmitEmail() {
+        var param = {
+            EmailAddress: $("#txtEmailAddress").val(),
+            DomainId: parseInt('16')
+        }
+        if (param.EmailAddress == '') {
+            ShowMessage(MessageType.error, 'آدرس پست الکترونیک را وارد کنید');
+            return;
+        }
+        CallMethod('/Home/SubmitEmail', JSON.stringify(param), function (response) {
+            console.log(response);
+            if (response) {
+                ShowMessage(MessageType.success, "آدرس پست الکترونیک شما با موفقیت ثبت شد")
+                $("#txtEmailAddress").val('');
+            }
+            else
+                ShowMessage(MessageType.error, "متاسفانه آدرس پست الکترونیک شما ثبت نشد");
+        });
+
+    }
+</script>

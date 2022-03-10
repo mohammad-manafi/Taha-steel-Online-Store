@@ -1,0 +1,125 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "استیل طاها";
+}
+
+@await Component.InvokeAsync("Slide")
+
+@await Component.InvokeAsync("ProductCategory")
+
+@await Component.InvokeAsync("ProductCategoryWithProduct")
+
+@await Component.InvokeAsync("LatestArrivals")
+
+
+<!--====================  feature logo area ====================-->
+<div class="accordion accordion-style-1" id="accordion-1">
+    <div class="card">
+        <div class="card-header">
+            <h6>
+                <a class="" data-toggle="collapse" data-target="#collapse-1-1" aria-expanded="false">
+                    چرا استیل طاها؟
+                </a>
+            </h6>
+        </div>
+        <div id="collapse-1-1" class="collapse show" data-parent="#accordion-1" style="">
+            <div class="card-body">
+                <p>
+                    مجموعه استیل طاها با کادری مجرب همواره در تلاش است که با تکیه بر توان بالای فنی و مدیریتی  سازمان خود
+                    به افزایش کیفیت محصولات و خدمات با بهترین متود روز و قیمت متعهد باشد.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6>
+                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-2">
+                    نحوه اعتماد به استیل طاها؟
+                </a>
+            </h6>
+        </div>
+        <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+            <div class="card-body">
+                <p>پاسخگویی هنگام تماس - داشتن آدرس محل کار - ضمانت کالا - محصول ایده آل</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6>
+                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-3">
+                    چرا شما باید محصولی ایده آل را دریافت کنید؟
+                </a>
+            </h6>
+        </div>
+        <div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
+            <div class="card-body">
+                <p> طبیعتا حق شماست که با در نظر داشتن بهایی که میپردازید بهترین محصول را دریافت نمایید. </p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h6>
+                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-4">
+                    از چه طریقی میتوانید با ما در ارتباط باشید؟
+                </a>
+            </h6>
+        </div>
+        <div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
+            <div class="card-body">
+                <p>شما همچنین میتوانید از طریق صفحه تماس با ما، با ما در ارتباط باشید 
+                    و ما را در شبکه های اجتمایی اینستاگرام - واتس آپ دنبال نمایید. </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====================  End of feature logo area  ====================-->
+<!--====================  banner hover area ====================-->
+
+<div class="component-section bg-gray">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-6 mb-md-0 mb-3">
+                <div class="fun-box text-center">
+                    <i class="vl-avatar-boy icon-lg text-primary"></i>
+                    <h2 class="value mt-3" data-target="310">0</h2>
+                    <hr class="w-25">
+                    <p>مشتریان خوشحال</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-md-0 mb-3">
+                <div class="fun-box text-center">
+                    <i class="vl-finger-touch icon-lg text-primary"></i>
+                    <h2 class="value mt-3" data-target="2280">0</h2>
+                    <hr class="w-25">
+                    <p>مشترکین</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-md-0 mb-3">
+                <div class="fun-box text-center">
+                    <i class="vl-download icon-lg text-primary"></i>
+                    <h2 class="value mt-3" data-target="4550">0</h2>
+                    <hr class="w-25">
+                    <p>جذب رضایت مشتریان</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-md-0 mb-3">
+                <div class="fun-box text-center">
+                    <i class="vl-cart1 icon-lg text-primary"></i>
+                    <h2 class="value mt-3" data-target="3110">0</h2>
+                    <hr class="w-25">
+                    <p>محصولات خریداری شده</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--====================  End of banner hover area  ====================-->
+@await Component.InvokeAsync("LatestArticles")
+
+<!--====================  newsletter area ====================-->
